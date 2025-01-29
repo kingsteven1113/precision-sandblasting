@@ -1,27 +1,19 @@
+import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import './App.css';
+import LandingPage from './Components/LandingPage/LandingPage.jsx'
+import NavBar from './Components/NavBar/NavBar.jsx'
+import Footer from './Components/Footer/Footer.jsx'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src="Octocat.png" className="App-logo" alt="logo" />
-        <p>
-          GitHub Codespaces <span className="heart">♥️</span> React
-        </p>
-        <p className="small">
-          Edit <code>src/App.jsx</code> and save to reload.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </p>
-      </header>
+      <BrowserRouter>
+      <NavBar></NavBar>
+    <Routes>
+      <Route path='/' element={<LandingPage />}></Route>
+    </Routes>
+    <Footer></Footer>   
+    </BrowserRouter>
     </div>
   );
 }
